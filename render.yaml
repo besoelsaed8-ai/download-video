@@ -1,0 +1,21 @@
+# Render Blueprint — one-click deploy of Download Video (free tier friendly)
+# https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: download-video
+    runtime: node
+    plan: free
+    buildCommand: python -m pip install --target vendor/ytdlp --quiet yt-dlp 2>/dev/null || python3 -m pip install --target vendor/ytdlp --quiet yt-dlp 2>/dev/null || echo "yt-dlp not installed — universal engine disabled (site still works)"
+    startCommand: node server.js
+    envVars:
+      # ضع نطاقك الحقيقي هنا (بدون خط مائل في الآخر) — مهم للـ SEO (canonical/sitemap)
+      - key: SITE_URL
+        value: https://your-real-domain.com/
+        sync: false
+      # سرّ اختياري لتوقيع روابط وساطة الملفات — أي قيمة عشوائية طويلة
+      - key: SIGNED_STREAM_SECRET
+        generateValue: true
+      # اختياري: كعكة sessionid إنستغرام لجعل تحميل إنستغرام يعمل من خوادم الاستضافة
+      # - key: IG_SESSIONID
+      #   value: ''
+      #   sync: false

@@ -1,0 +1,6 @@
+# ads.txt — يجب أن يكون هذا الملف في جذر النطاق قبل نشر الإعلانات.
+# بعد تفعيل AdSense، ضع سطر الناشر الخاص بك مكان المثال التالي ثم ارفع الموقع:
+#
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# (pub-XXXXXXXXXXXXXXXX = معرّف الناشر من حساب AdSense)

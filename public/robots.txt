@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /stream
+Disallow: /api/
+
+# ملاحظة للمواقع على استضافة ثابتة بدون الخادم: استبدل رابط Sitemap أدناه بنطاقك يدوياً
+Sitemap: __SITE_URL__sitemap.xml
